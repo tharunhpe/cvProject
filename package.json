@@ -1,0 +1,30 @@
+{
+  "name": "CV-PROJECT",
+  "version": "0.1.0",
+  "license": "CV",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tharunhpe/cvProject"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "eslint": "^4.11.0",
+    "gulp": "^3.9.1",
+    "jest": "^21.2.1",
+    "material-ui": "^0.19.4",
+    "prop-types": "^15.6.0",
+    "react": "^15.6.1",
+    "react-intl": "^2.4.0",
+    "react-router": "^4.2.0",
+    "redux": "^3.7.2",
+    "webpack": "^3.8.1"
+  },
+  "devDependencies": {
+    "gulp-babel": "^7.0.0",
+    "gulp-filter": "^5.0.1"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production gulp dist",
+    "start": "node server/server.js"
+  }
+}
