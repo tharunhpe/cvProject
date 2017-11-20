@@ -1,30 +1,77 @@
 {
-  "name": "CV-PROJECT",
-  "version": "0.1.0",
-  "license": "CV",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tharunhpe/cvProject"
+  "name": "hashMAPS",
+  "version": "1.0.0",
+  "description": "Connecting professionals",
+  "scripts": {
+    "dev": "rm -rf build && webpack --config webpack.dev.config.js",
+    "dist": "rm -rf build && webpack --config webpack.prod.config.js",
+    "start": "webpack-dev-server --content-base build/ --config webpack.dev.config.js --history-api-fallback --hot --inline --host 0.0.0.0"
   },
+  "files": [
+    "font",
+    "img",
+    "js",
+    "less",
+    "index.html",
+    "webpack.config.js"
+  ],
+  "keywords": [
+    "react",
+    "hashMAPS"
+  ],
+  "author": "Tharun Kariveda <tharun.vizag.iitg@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "babel": "^6.23.0",
-    "eslint": "^4.11.0",
-    "gulp": "^3.9.1",
-    "jest": "^21.2.1",
-    "material-ui": "^0.19.4",
-    "prop-types": "^15.6.0",
-    "react": "^15.6.1",
+    "lodash": "^4.17.4",
+    "material-ui": "^0.16.7",
+    "material-ui-image": "^2.1.1",
+    "react": "^15.4.2",
+    "react-addons-create-fragment": "^15.4.2",
+    "react-addons-pure-render-mixin": "^15.4.2",
+    "react-addons-transition-group": "^15.4.2",
+    "react-addons-update": "^15.4.2",
+    "react-dom": "^15.4.2",
     "react-intl": "^2.4.0",
-    "react-router": "^4.2.0",
+    "react-native-html-to-pdf": "^0.4.0",
+    "react-redux": "5.0.4",
+    "react-router-dom": "^4.2.2",
+    "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.7.2",
-    "webpack": "^3.8.1"
+    "redux-thunk": "^2.2.0",
+    "splash-screen": "^3.0.1",
+    "uuid": "^3.0.1"
   },
   "devDependencies": {
-    "gulp-babel": "^7.0.0",
-    "gulp-filter": "^5.0.1"
-  },
-  "scripts": {
-    "build": "cross-env NODE_ENV=production gulp dist",
-    "start": "node server/server.js"
+    "autoprefixer": "^6.7.0",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-react-intl": "2.3.1",
+    "babel-plugin-resolver": "1.1.0",
+    "babel-plugin-syntax-object-rest-spread": "6.13.0",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-2": "6.24.1",
+    "babel-resolver": "1.1.0",
+    "babel-runtime": "6.23.0",
+    "css-loader": "^0.26.1",
+    "file-loader": "^0.10.0",
+    "html-webpack-plugin": "^2.26.0",
+    "image-webpack-loader": "^3.4.2",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
+    "node-sass": "^4.6.1",
+    "postcss-loader": "^1.2.2",
+    "react-hot-loader": "^1.3.1",
+    "redux-devtools": "3.3.2",
+    "redux-devtools-dock-monitor": "1.1.1",
+    "redux-devtools-log-monitor": "1.2.0",
+    "redux-logger": "3.0.1",
+    "redux-mock-store": "1.2.3",
+    "redux-promise-middleware": "4.2.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.2.0"
   }
 }

@@ -4,7 +4,6 @@ node_modules
 **/dist*/**
 **/coverage*/**
 **/dist-bower*/**
-.DS_Store
 .sass-cache
 *.log
 *tmp*
@@ -15,3 +14,17 @@ coverage/**
 docker-context/ui/**
 .vscode
 /test-report.xml
+#css
+css
+
+#build
+build
+
+#mac
+.DS_Store
+
+npm-debug.log
+
+*.bundle.js
+
+node_modules
