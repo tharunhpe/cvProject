@@ -1,73 +1,41 @@
-import React, {Component} from 'react';
-import FontIcon from 'material-ui/FontIcon';
-import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
+import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
-import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
-import ActionRestore from 'material-ui/svg-icons/action/restore';
 import TextField from 'material-ui/TextField';
-import image2 from 'img/startWallpaper.png';
-import image3 from 'img/wallpaper.png';
-import image4 from 'img/wallpaper2.png';
-import {List, ListItem} from 'material-ui/List';
-import {
-  Table,
-  TableBody,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn,
-} from 'material-ui/Table';
+import { List, ListItem } from 'material-ui/List';
 import {
   Step,
   Stepper,
   StepLabel,
 } from 'material-ui/Stepper';
 import FlatButton from 'material-ui/FlatButton';
-import Image from 'material-ui-image';
-import cvMakerComponent from './cvMakerComponent';
 import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
 import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more';
 import MenuItem from 'material-ui/MenuItem';
-import DropDownMenu from 'material-ui/DropDownMenu';
-import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
+import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
 
-const recentsIcon = <ActionRestore />;
-const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
-const nearbyIcon = <IconLocationOn />;
-
-/**
- * A simple example of `BottomNavigation`, with three labels and icons
- * provided. The selected `BottomNavigationItem` is determined by application
- * state (for instance, by the URL).
- */
 class cvMakerContainer extends Component {
   constructor(props) {
     super(props);
-    this.select = this.select.bind(this);
     this.handleNext = this.handleNext.bind(this);
     this.handlePrev = this.handlePrev.bind(this);
     this.getStepContent = this.getStepContent.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.state = {
-      selectedIndex: 0,
       finished: false,
       stepIndex: 0,
-      value: 3,
     };
   }
 
-  select(index) {
-    this.setState({selectedIndex: index});
+  handleChange(event, index, value) {
+    this.setState({ value }); // eslint-disable-line
   }
 
-  handleChange(event, index, value) { this.setState({value}) }
-
-  handleNext(){
-    const {stepIndex} = this.state;
+  handleNext() {
+    const { stepIndex } = this.state;
     this.setState({
       stepIndex: stepIndex + 1,
       finished: stepIndex >= 2,
@@ -75,9 +43,9 @@ class cvMakerContainer extends Component {
   }
 
   handlePrev() {
-    const {stepIndex} = this.state;
+    const { stepIndex } = this.state;
     if (stepIndex > 0) {
-      this.setState({stepIndex: stepIndex - 1});
+      this.setState({ stepIndex: stepIndex - 1 });
     }
   }
 
@@ -97,13 +65,6 @@ class cvMakerContainer extends Component {
       margin: 10,
       display: 'inline-block',
     };
-    const style3 = {
-      height: '100%',
-      width: '100%',
-      textAlign: 'center',
-      display: 'inline-block',
-      backgroundColor: '#fff',
-    };
     const styleList = {
       paddingRight: '40px',
       paddingLeft: '40px',
@@ -118,19 +79,18 @@ class cvMakerContainer extends Component {
       position: 'absolute',
       left: 0,
       margin: 'none',
-    }
-    const editCV =(
-      <div className='toolbar'>
+    };
+    const editCV = (
+      <div className="toolbar">
         <Toolbar style={{ backgroundColor: '#F5F5F5' }}>
-          <ToolbarGroup firstChild={true}>
-          </ToolbarGroup>
+          <ToolbarGroup firstChild />
           <ToolbarGroup>
             <ToolbarTitle text="Options" />
             <ToolbarSeparator />
-            <RaisedButton label="Save" primary={true} />
+            <RaisedButton label="Save" primary />
             <IconMenu
               iconButtonElement={
-                <IconButton touch={true}>
+                <IconButton touch>
                   <NavigationExpandMoreIcon />
                 </IconButton>
               }
@@ -142,32 +102,25 @@ class cvMakerContainer extends Component {
         </Toolbar>
         <List style={styleList}>
           <ListItem>
-            <Paper style={style2} zDepth={4}>
-            </Paper>
+            <Paper style={style2} zDepth={4} />
           </ListItem>
           <ListItem>
-            <Paper style={style2} zDepth={4}>
-            </Paper>
+            <Paper style={style2} zDepth={4} />
           </ListItem>
           <ListItem>
-            <Paper style={style2} zDepth={4}>
-            </Paper>
+            <Paper style={style2} zDepth={4} />
           </ListItem>
           <ListItem>
-            <Paper style={style2} zDepth={4}>
-            </Paper>
+            <Paper style={style2} zDepth={4} />
           </ListItem>
           <ListItem>
-            <Paper style={style2} zDepth={4}>
-            </Paper>
+            <Paper style={style2} zDepth={4} />
           </ListItem>
           <ListItem>
-            <Paper style={style2} zDepth={4}>
-            </Paper>
+            <Paper style={style2} zDepth={4} />
           </ListItem>
           <ListItem>
-            <Paper style={style2} zDepth={4}>
-            </Paper>
+            <Paper style={style2} zDepth={4} />
           </ListItem>
         </List>
         <Divider />
@@ -179,7 +132,7 @@ class cvMakerContainer extends Component {
           /><br />
         </Paper>
       </div>
-      );
+    );
     switch (stepIndex) {
       case 0:
         return 'Choose CV template';
@@ -195,7 +148,6 @@ class cvMakerContainer extends Component {
 
   render() {
     const style2 = {
-      height: '100%',
       height: 1156,
       width: '100%',
       textAlign: 'center',
@@ -203,8 +155,8 @@ class cvMakerContainer extends Component {
       backgroundColor: '#fff',
       maxWidth: 'none',
     };
-    const {finished, stepIndex} = this.state;
-    const contentStyle = {margin: '0 16px'};
+    const { finished, stepIndex } = this.state;
+    const contentStyle = { margin: '0 16px' };
     const style4 = {
       left: 0,
       right: 0,
@@ -218,7 +170,12 @@ class cvMakerContainer extends Component {
           title="CV Maker"
           iconClassNameRight="muidocs-icon-navigation-expand-more"
         />
-        <div style={{width: '100%', maxWidth: 700, margin: 'auto', 'max-width': 'none'}}>
+        <div style={
+            {
+              width: '100%', maxWidth: 700, margin: 'auto', 'max-width': 'none',
+            }
+          }
+        >
           <Stepper style={style4} activeStep={stepIndex}>
             <Step>
               <StepLabel>Choose CV template</StepLabel>
@@ -233,28 +190,28 @@ class cvMakerContainer extends Component {
           <div style={contentStyle}>
             {finished ? (
               <p>
-                <a
+                <FlatButton
                   href="#"
                   onClick={(event) => {
                     event.preventDefault();
-                    this.setState({stepIndex: 0, finished: false});
+                    this.setState({ stepIndex: 0, finished: false });
                   }}
                 >
                   Click here
-                </a> to reset the example.
+                </FlatButton> to reset the example.
               </p>
             ) : (
               <div>
-                <div style={{marginTop: 12}}>
+                <div style={{ marginTop: 12 }}>
                   <FlatButton
                     label="Back"
                     disabled={stepIndex === 0}
                     onClick={this.handlePrev}
-                    style={{marginRight: 12}}
+                    style={{ marginRight: 12 }}
                   />
                   <RaisedButton
                     label={stepIndex === 2 ? 'Finish' : 'Next'}
-                    primary={true}
+                    primary
                     onClick={this.handleNext}
                   />
                 </div>

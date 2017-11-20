@@ -1,4 +1,4 @@
-import { createAction, createReducer, updateErrors } from 'js/utils/redux-utils';
+import { createAction, createReducer } from 'js/utils/redux-utils';
 
 export const CLEAR_ALL_TAGS_ERROR = 'tags/CLEAR_ALL_TAGS_ERROR';
 
@@ -12,7 +12,7 @@ export const initialState = {
 
 const handlers = {
   [CLEAR_ALL_TAGS_ERROR]: (state, { payload }) =>
-      ({ state, errors: [] }),
+    ({ ...state, errors: [] }),
 };
 
 export default createReducer(initialState, handlers);
